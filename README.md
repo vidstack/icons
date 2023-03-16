@@ -7,7 +7,7 @@ Media Icons is an open-source and beautifully hand-crafted collection of icons, 
 [Vidstack][vidstack] team specifically for building audio and video players. Our icons are bold,
 clean, and consistent. All of the icons are free for both personal and commercial use.
 
-<img src="../../assets/media-icons.png" alt="Media Icons Overview" />
+<img src="./assets/media-icons.png" alt="Media Icons Overview" />
 
 ## Usage
 
@@ -40,11 +40,11 @@ npm i media-icons
 Next, you'll need to configure the plugin like so:
 
 ```js
-import { FileSystemIconLoader } from 'unplugin-icons/loaders';
+import { FileSystemIconLoader } from "unplugin-icons/loaders";
 
 Icons({
   customCollections: {
-    media: FileSystemIconLoader('./node_modules/media-icons/raw'),
+    media: FileSystemIconLoader("./node_modules/media-icons/raw"),
   },
 });
 ```
@@ -84,7 +84,7 @@ import { pausePaths, playPaths, ... } from 'media-icons';
 
 ```js
 // All SVG paths (server-side)
-import { paths } from 'media-icons';
+import { paths } from "media-icons";
 
 paths.play; // string
 paths.pause;
@@ -93,7 +93,7 @@ paths.pause;
 
 ```js
 // Dynamically loaded SVG paths (client-side)
-import { lazyPaths } from 'media-icons';
+import { lazyPaths } from "media-icons";
 
 lazyPaths.play(); // Promise<string>
 lazyPaths.pause();
