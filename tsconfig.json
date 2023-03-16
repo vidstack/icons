@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "importsNotUsedAsValues": "error",
+    "lib": ["dom", "dom.iterable", "es2020"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es2020"
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}
