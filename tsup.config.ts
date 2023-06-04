@@ -10,7 +10,7 @@ interface BundleOptions {
 function dist({ server }: BundleOptions): Options {
   return {
     entry: { index: `src/index.ts` },
-    format: server ? ["esm", "cjs"] : "esm",
+    format: "esm",
     clean: false,
     treeshake: true,
     bundle: true,
