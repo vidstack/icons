@@ -3,6 +3,8 @@
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "dist/types",
+    "emitDeclarationOnly": true,
+    "noEmit": false,
     "paths": {}
   },
   "exclude": ["src/**/*.test.ts"]
