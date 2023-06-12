@@ -1,13 +1,13 @@
-import { existsSync } from 'node:fs';
-import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { existsSync } from "node:fs";
+import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const srcDir = path.resolve(__dirname, '../src');
-const outDir = path.resolve(srcDir, 'icons');
-const iconsDir = path.resolve(__dirname, '../raw');
-const ignore = new Set(['.DS_Store']);
+const srcDir = path.resolve(__dirname, "../src");
+const outDir = path.resolve(srcDir, "icons");
+const iconsDir = path.resolve(__dirname, "../raw");
+const ignore = new Set([".DS_Store"]);
 
 async function buildIcons() {
   if (existsSync(outDir)) await rm(outDir, { recursive: true });
@@ -21,40 +21,46 @@ async function buildIcons() {
     const fileName = path.basename(file, path.extname(file));
     const filePath = path.resolve(iconsDir, file);
 
-    const content = (await readFile(filePath, 'utf8'))
-      .replace(/<svg(.*?)>/, '')
-      .replace('</svg>', '')
-      .replace(/[\n\r\s\t]+/g, ' ')
+    const content = (await readFile(filePath, "utf8"))
+      .replace(/<svg(.*?)>/, "")
+      .replace("</svg>", "")
+      .replace(/[\n\r\s\t]+/g, " ")
       .trim();
 
     icons[fileName] = content;
     await writeFile(
       path.resolve(outDir, `${fileName}.ts`),
-      `export default /* #__PURE__*/ \`${content}\` as string;`,
+      `export default /* #__PURE__*/ \`${content}\` as string;`
     );
   }
 
   await writeFile(
-    path.resolve(outDir, 'index.ts'),
+    path.resolve(outDir, "index.ts"),
     [
       Object.keys(icons)
         .map((name, i) => `import Icon$${i} from "./${name}.js";`)
-        .join('\n'),
+        .join("\n"),
       `export { ${Object.keys(icons)
         .map((name, i) => `Icon$${i} as ${kebabToCamelCase(name)}Paths`)
-        .join(',\n')} }`,
+        .join(",\n")} }`,
       `export const paths: Record<string, string> = /* #__PURE__*/ {\n${Object.keys(icons)
         .map((name, i) => `"${name}": Icon$${i}`)
-        .join(',\n')}\n};`,
-      `export const lazyPaths: Record<string, (() => Promise<{default: string}>)> = /* #__PURE__*/ { ${Object.keys(
-        icons,
-      )
-        .map((name) => `"${name}": () => import("./${name}.js")`)
-        .join(',\n')} };`,
+        .join(",\n")}\n};`,
       `export type IconType = ${Object.keys(icons)
         .map((icon) => `"${icon}"`)
-        .join('|')};`,
-    ].join('\n\n'),
+        .join("|")};`,
+    ].join("\n\n")
+  );
+
+  await writeFile(
+    path.resolve(outDir, "lazy.ts"),
+    [
+      `export const lazyPaths: Record<string, (() => Promise<{default: string}>)> = /* #__PURE__*/ { ${Object.keys(
+        icons
+      )
+        .map((name) => `"${name}": () => import("./${name}.js")`)
+        .join(",\n")} };`,
+    ].join("\n\n")
   );
 }
 

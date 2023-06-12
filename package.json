@@ -14,13 +14,16 @@
     "*.d.ts"
   ],
   "scripts": {
-    "build": "node .scripts/prebuild.js && tsup",
+    "build": "rimraf dist && node .scripts/prebuild.js && rollup -c && pnpm types",
     "types": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
     "format": "prettier src --write --loglevel warn"
   },
   "devDependencies": {
-    "tsup": "^6.7.0",
+    "esbuild": "^0.18.1",
+    "rimraf": "^5.0.1",
+    "rollup": "^3.25.1",
+    "rollup-plugin-esbuild": "^5.0.0",
     "typescript": "^5.1.0"
   },
   "contributors": [
