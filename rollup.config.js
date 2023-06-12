@@ -7,19 +7,14 @@ export default defineConfig([
     treeshake: true,
     output: {
       format: "esm",
-      dir: "dist/browser",
+      dir: "dist",
       chunkFileNames: "icons/[name].js",
     },
-    plugins: [esbuild({ target: "esnext", platform: "browser" })],
-  },
-  {
-    input: ["src/index.ts", "src/icons/lazy.ts"],
-    treeshake: true,
-    output: {
-      format: "esm",
-      dir: "dist/server",
-      chunkFileNames: "icons/[name].js",
-    },
-    plugins: [esbuild({ target: "node16", platform: "node" })],
+    plugins: [
+      esbuild({
+        target: "esnext",
+        platform: "neutral",
+      }),
+    ],
   },
 ]);
