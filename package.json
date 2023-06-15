@@ -42,6 +42,9 @@
       "types": "./dist/types/index.d.ts",
       "default": "./dist/index.js"
     },
+    "./dist/icons/*": {
+      "default": "./dist/icons/*"
+    },
     "./raw/*": "./raw/*"
   },
   "publishConfig": {
