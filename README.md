@@ -124,7 +124,7 @@ Media Icons is [MIT licensed](./LICENSE).
 [vidstack]: https://vidstack.io
 [catalog]: https://vidstack.io/media-icons
 [package]: https://www.npmjs.com/package/media-icons
-[package-badge]: https://img.shields.io/npm/v/media-icons
+[package-badge]: https://img.shields.io/npm/v/media-icons/next
 [discord]: https://discord.com/invite/7RGU7wvsu9
 [figma]: https://www.figma.com/@vidstack
 [discord-badge]: https://img.shields.io/discord/742612686679965696?color=%235865F2&label=%20&logo=discord&logoColor=white
