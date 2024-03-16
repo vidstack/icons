@@ -24,11 +24,11 @@
     "format": "prettier src --write --loglevel warn"
   },
   "devDependencies": {
-    "esbuild": "^0.18.1",
-    "rimraf": "^5.0.1",
-    "rollup": "^3.25.1",
-    "rollup-plugin-esbuild": "^5.0.0",
-    "typescript": "^5.1.0"
+    "esbuild": "^0.20.0",
+    "rimraf": "^5.0.0",
+    "rollup": "^4.0.0",
+    "rollup-plugin-esbuild": "^6.0.0",
+    "typescript": "^5.4.0"
   },
   "contributors": [
     "Rahim Alwer <rahim.alwer@gmail.com>",
