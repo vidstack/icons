@@ -1,13 +1,13 @@
 {
   "name": "media-icons",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Open-source and beautifully hand-crafted collection of media icons.",
   "type": "module",
   "types": "dist/types/index.d.ts",
   "jsdelivr": "./dist/cdn.js",
   "sideEffects": [
-    "./src/cdn.ts",
-    "./dist/cdn.js"
+    "./src/element.ts",
+    "./dist/element.js"
   ],
   "engines": {
     "node": ">=16"

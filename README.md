@@ -31,7 +31,7 @@ React.
 Install the package:
 
 ```bash
-npm i media-icons
+npm i media-icons@next
 ```
 
 Register the `<media-icon>` element:
@@ -53,7 +53,7 @@ Use the element (icons are lazy loaded):
 Install the package:
 
 ```bash
-npm i media-icons
+npm i media-icons@next
 ```
 
 Import icons like so:
@@ -77,7 +77,7 @@ You can use the `<media-icon>` element to lazy load icons via [NPM](#npm) or [CD
 Install the package:
 
 ```ts
-npm i media-icons
+npm i media-icons@next
 ```
 
 Register the `<media-icon>` element:
@@ -119,7 +119,7 @@ options.
 First, install the package:
 
 ```bash
-npm i media-icons
+npm i media-icons@next
 ```
 
 Next, you'll need to configure the plugin like so:
