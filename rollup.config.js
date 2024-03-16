@@ -3,7 +3,7 @@ import esbuild from "rollup-plugin-esbuild";
 
 export default defineConfig([
   {
-    input: ["src/index.ts", "src/icons/lazy.ts"],
+    input: ["src/index.ts", "src/icons/lazy.ts", "src/element.ts", "src/cdn.ts"],
     treeshake: true,
     output: {
       format: "esm",

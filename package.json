@@ -4,7 +4,11 @@
   "description": "Open-source and beautifully hand-crafted collection of media icons.",
   "type": "module",
   "types": "dist/types/index.d.ts",
-  "sideEffects": false,
+  "jsdelivr": "./dist/cdn.js",
+  "sideEffects": [
+    "./src/cdn.ts",
+    "./dist/cdn.js"
+  ],
   "engines": {
     "node": ">=16"
   },
@@ -41,6 +45,10 @@
     ".": {
       "types": "./dist/types/index.d.ts",
       "default": "./dist/index.js"
+    },
+    "./element": {
+      "types": "./dist/types/element.d.ts",
+      "default": "./dist/element.js"
     },
     "./dist/icons/*": {
       "default": "./dist/icons/*"

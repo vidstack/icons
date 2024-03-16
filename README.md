@@ -11,21 +11,106 @@ clean, and consistent. All of the icons are free for both personal and commercia
 
 ## Usage
 
-Media Icons can be used in any of the following ways:
+The icons can be used in any of the following ways:
 
-- [Catalog](#catalog)
-- [Bundle](#bundle)
-- [Raw SVG](#svg)
-- [Raw SVG Paths](#svg-paths)
+- [Vidstack Player](#vidstack-player)
+- [Web Component](#web-component)
+- [JS Frameworks](#js-frameworks)
+- [Copy SVG](#copy-svg)
+- [Raw SVG](#raw-svg)
+- [Raw SVG Paths](#raw-svg-paths)
 - [Figma](#figma)
 
-### Catalog
+## Vidstack Player
 
-The easiest way to get started is by heading over to the [media icons catalog][catalog] on the
-Vidstack website, searching for an icon, copying the raw SVG, and finally pasting it in your
-project.
+If you're using [Vidstack Player][github-player], you can use the library as follows with HTML or
+React.
 
-### Bundle
+### HTML
+
+Install the package:
+
+```bash
+npm i media-icons
+```
+
+Register the `<media-icon>` element:
+
+```ts
+import "vidstack/icons";
+```
+
+Use the element (icons are lazy loaded):
+
+```html
+<media-icon type="play"></media-icon>
+```
+
+👉 The complete list of icons can be found in our [media icons catalog][catalog].
+
+### React
+
+Install the package:
+
+```bash
+npm i media-icons
+```
+
+Import icons like so:
+
+```ts
+import {
+  PauseIcon,
+  PlayIcon,
+  // ...
+} from "@vidstack/react/icons";
+```
+
+👉 The complete list of icons can be found in our [media icons catalog][catalog].
+
+## Web Component
+
+You can use the `<media-icon>` element to lazy load icons via [NPM](#npm) or [CDN](#cdn).
+
+### NPM
+
+Install the package:
+
+```ts
+npm i media-icons
+```
+
+Register the `<media-icon>` element:
+
+```ts
+import "media-icons/element";
+```
+
+Use the element (icons are lazy loaded):
+
+```html
+<media-icon type="play"></media-icon>
+```
+
+👉 The complete list of icons can be found in our [media icons catalog][catalog].
+
+### CDN
+
+Add the following script to the `<head>` of your site:
+
+```html
+<script src="cdn.vidstack.io/icons" type="module"></script>
+```
+
+Use the element (icons are lazy loaded):
+
+```html
+<media-icon type="play"></media-icon>
+```
+
+👉 The complete list of icons can be found in our [media icons catalog][catalog].
+
+## JS Frameworks
 
 We recommend using [unplugin-icons](https://github.com/antfu/unplugin-icons) as it has many
 bundler (Vite/Rollup/Webpack), framework (React/Vue/Preact/Solid/Svelte) and customization
@@ -59,9 +144,14 @@ import PauseIcon from '~icons/media/pause';
 import PlayIcon from '~icons/media/play';
 ```
 
-The complete list of icons can be found in our [media icons catalog][catalog].
+👉 The complete list of icons can be found in our [media icons catalog][catalog].
 
-### SVG
+## Copy SVG
+
+Head over to the [media icons catalog][catalog] on the Vidstack website, search for an icon, copy
+the raw SVG, and finally paste it in your project.
+
+## Raw SVG
 
 The raw SVG files can be imported from this package like so:
 
@@ -73,7 +163,7 @@ import PauseIcon from 'media-icons/raw/pause.svg';
 import PlayIcon from 'media-icons/raw/play.svg';
 ```
 
-### SVG Paths
+## Raw SVG Paths
 
 The raw SVG paths can be imported from this package like so:
 
@@ -100,7 +190,8 @@ lazyPaths.pause();
 // ...
 ```
 
-It's expected that the SVG paths are inserted into an `<svg>` element as `innerHTML` with the following setup:
+It's expected that the SVG paths are inserted into an `<svg>` element as `innerHTML` with the
+following setup:
 
 ```html
 <svg
@@ -113,7 +204,7 @@ It's expected that the SVG paths are inserted into an `<svg>` element as `innerH
 ></svg>
 ```
 
-### Figma
+## Figma
 
 Our media icons are available on Figma! You can get a copy from the [Vidstack community page][figma].
 
@@ -122,6 +213,7 @@ Our media icons are available on Figma! You can get a copy from the [Vidstack co
 Media Icons is [MIT licensed](./LICENSE).
 
 [vidstack]: https://vidstack.io
+[github-player]: https://github.com/vidstack/player
 [catalog]: https://vidstack.io/media-icons
 [package]: https://www.npmjs.com/package/media-icons
 [package-badge]: https://img.shields.io/npm/v/media-icons/next
