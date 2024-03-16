@@ -48,7 +48,8 @@
     },
     "./element": {
       "types": "./dist/types/element.d.ts",
-      "default": "./dist/element.js"
+      "browser": "./dist/element.js",
+      "default": "./dist/server/element.js"
     },
     "./dist/icons/*": {
       "default": "./dist/icons/*"
