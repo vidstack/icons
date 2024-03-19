@@ -99,7 +99,7 @@ Use the element (icons are lazy loaded):
 Add the following script to the `<head>` of your site:
 
 ```html
-<script src="cdn.vidstack.io/icons" type="module"></script>
+<script src="https://cdn.vidstack.io/icons" type="module"></script>
 ```
 
 Use the element (icons are lazy loaded):
