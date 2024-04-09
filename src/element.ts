@@ -94,4 +94,6 @@ declare global {
   }
 }
 
-window.customElements.define(MediaIconElement.tagName, MediaIconElement);
+if (!window.customElements.get(MediaIconElement.tagName)) {
+  window.customElements.define(MediaIconElement.tagName, MediaIconElement);
+}
